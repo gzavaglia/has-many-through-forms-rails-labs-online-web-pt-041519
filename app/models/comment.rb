@@ -12,7 +12,7 @@ class Comment < ActiveRecord::Base
   #     end
   #   end
   # end
-  def user_attributes=(user_attributes)
+  def user_attributes(user_attributes)
     user_attributes.values.each do |user_attribute|
       user = User.find_or_create_by(user_attribute)
       self.users.username << user.username
